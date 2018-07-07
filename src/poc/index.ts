@@ -1,15 +1,20 @@
 import puppeteer, {NavigationOptions} from 'puppeteer';
-import path from 'path';
-// import fs from 'fs';
-
-// const html = fs.readFileSync('test.html', 'utf-8');
+import pug from 'pug';
+import * as sass from 'node-sass';
 
 (async () => {
     try {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        await page.goto(`file:${path.resolve(__dirname, 'test.html')}`, {waitUntil: ['load', 'domcontentloaded']} as NavigationOptions);
-        await page.pdf({path: 'hn.pdf', format: 'A4'});
+        const compiledStyle = sass.renderSync({file: 'test.scss'});
+
+        const renderedTemplate = pug.renderFile('test.pug', {
+            name: 'Timothy',
+            styling: compiledStyle.css
+        });
+
+        await page.goto(`data:text/html,${renderedTemplate}`, {waitUntil: ['load', 'domcontentloaded']} as NavigationOptions);
+        const pdfBuffer = await page.pdf({path: 'hn.pdf', format: 'A4', printBackground: true});
 
         await browser.close();
     } catch (error) {
