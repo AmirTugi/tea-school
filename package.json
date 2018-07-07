@@ -1,0 +1,32 @@
+{
+  "name": "tea-school",
+  "version": "1.0.0",
+  "description": "A simplified html + css --> PDF generator",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmirTugi/tea-school.git"
+  },
+  "keywords": [
+    "PDF",
+    "puppeteer",
+    "nodejs",
+    "pdf-generator"
+  ],
+  "author": "Amir Tugendhaft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmirTugi/tea-school/issues"
+  },
+  "homepage": "https://github.com/AmirTugi/tea-school#readme",
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.1",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.5.0"
+  }
+}
