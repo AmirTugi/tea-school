@@ -1,0 +1,28 @@
+$blue: #0084ff;
+$blue-darker: darken($blue, 5);
+
+body {
+  background: #20262E;
+  padding: 20px;
+  font-family: Helvetica;
+}
+
+#banner-message {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  transition: all 0.2s;
+  margin: 0 auto;
+  width: 300px;
+
+  button {
+    background: $blue-darker;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 14px;
+    font-size: 15px;
+    color: #fff;
+  }
+}
