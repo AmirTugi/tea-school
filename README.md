@@ -78,6 +78,6 @@ body {
 }
 ```
 
-####Important
+#### Important
 The key `compiledStyle` is reserved on the Pug options fro the compiled style to be attached to the html.  
 Please do not use this key (or use at your own risk)
