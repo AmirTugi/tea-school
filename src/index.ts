@@ -15,12 +15,15 @@ namespace TeaSchool{
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         const compiledStyle = sass.renderSync({...options.styleOptions});
-        const htmlTemplateOptions: PugOptions & PugLocalsObject = {...options.htmlTemplateOptions, compiledStyle};
-
+        const htmlTemplateOptions: PugOptions & PugLocalsObject = {
+            ...options.htmlTemplateOptions,
+            compiledStyle: compiledStyle.css
+        };
         const renderedTemplate = pug.renderFile(options.htmlTemplatePath, htmlTemplateOptions);
 
         // Make puppeteer render the HTML from data buffer
         await page.goto(`data:text/html,${renderedTemplate}`, {waitUntil: ['load', 'domcontentloaded']} as NavigationOptions);
+
         const pdfBuffer = await page.pdf({...options.pdfOptions});
 
         await browser.close();
@@ -28,5 +31,8 @@ namespace TeaSchool{
         return pdfBuffer
     };
 }
+
+export const generatePdf = TeaSchool.generatePdf;
+export interface GeneratePdfOptions extends TeaSchool.GeneratePdfOptions {}
 
 export default TeaSchool;
