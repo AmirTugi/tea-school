@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "A simplified html + css --> PDF generator",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {},
   "repository": {
     "type": "git",
@@ -21,15 +22,15 @@
   },
   "homepage": "https://github.com/AmirTugi/tea-school#readme",
   "devDependencies": {
-    "@types/node-sass": "^3.10.32",
-    "@types/pug": "^2.0.4",
-    "@types/puppeteer": "^1.5.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   },
   "dependencies": {
     "node-sass": "^4.9.1",
     "pug": "^2.0.3",
-    "puppeteer": "^1.5.0"
+    "puppeteer": "^1.5.0",
+    "@types/node-sass": "^3.10.32",
+    "@types/pug": "^2.0.4",
+    "@types/puppeteer": "^1.5.0"
   }
 }
