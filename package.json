@@ -1,6 +1,6 @@
 {
   "name": "tea-school",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simplified html + css --> PDF generator",
   "main": "src/index.js",
   "scripts": {},
