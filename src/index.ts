@@ -1,4 +1,4 @@
-import pug, {LocalsObject as PugLocalsObject, Options as PugOptions} from 'pug';
+import * as pug from 'pug';
 import * as sass from 'node-sass';
 import puppeteer, {NavigationOptions, PDFOptions} from 'puppeteer';
 import {Options as SassOptions} from "node-sass";
@@ -7,7 +7,7 @@ namespace TeaSchool{
     export interface GeneratePdfOptions {
         styleOptions?: SassOptions;
         htmlTemplatePath: string;
-        htmlTemplateOptions?: PugOptions & PugLocalsObject;
+        htmlTemplateOptions?: pug.Options & pug.LocalsObject;
         pdfOptions?: PDFOptions;
     }
 
@@ -15,7 +15,7 @@ namespace TeaSchool{
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         const compiledStyle = sass.renderSync({...options.styleOptions});
-        const htmlTemplateOptions: PugOptions & PugLocalsObject = {
+        const htmlTemplateOptions: pug.Options & pug.LocalsObject = {
             ...options.htmlTemplateOptions,
             compiledStyle: compiledStyle.css
         };

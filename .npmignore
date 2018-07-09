@@ -1,6 +1,5 @@
 node_modules/
 .idea/
-src/__tests__/
-src/poc/
+src/
 tslint.json
 tsconfig.json
