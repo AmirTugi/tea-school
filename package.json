@@ -4,7 +4,9 @@
   "description": "A simplified html + css --> PDF generator",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "npx webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AmirTugi/tea-school.git"
@@ -22,15 +24,20 @@
   },
   "homepage": "https://github.com/AmirTugi/tea-school#readme",
   "devDependencies": {
-    "tslint": "^5.10.0",
-    "typescript": "^2.9.2"
-  },
-  "dependencies": {
-    "node-sass": "^4.9.1",
-    "pug": "^2.0.3",
-    "puppeteer": "^1.5.0",
     "@types/node-sass": "^3.10.32",
     "@types/pug": "^2.0.4",
-    "@types/puppeteer": "^1.5.0"
+    "@types/puppeteer": "^1.5.0",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
+    "webpack-command": "^0.4.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.2",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.5.0",
+    "ts-loader": "^4.4.2",
+    "webpack": "^4.15.1"
   }
 }
