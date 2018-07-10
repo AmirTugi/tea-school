@@ -24,15 +24,13 @@
   },
   "homepage": "https://github.com/AmirTugi/tea-school#readme",
   "devDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
     "@types/node-sass": "^3.10.32",
     "@types/pug": "^2.0.4",
     "@types/puppeteer": "^1.5.0",
-    "declaration-bundler-webpack-plugin": "^1.0.3",
-    "tslint": "^5.10.0",
-    "typescript": "^2.9.2",
-    "webpack-node-externals": "^1.7.2"
-  },
-  "dependencies": {
     "node-sass": "^4.9.2",
     "pug": "^2.0.3",
     "puppeteer": "^1.5.0"
