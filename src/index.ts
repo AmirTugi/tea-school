@@ -6,7 +6,8 @@ import {Options as SassOptions} from "node-sass";
 namespace TeaSchool{
     export interface GeneratePdfOptions {
         styleOptions?: SassOptions;
-        htmlTemplatePath: string;
+        htmlTemplateFn?: pug.compileTemplate;
+        htmlTemplatePath?: string;
         htmlTemplateOptions?: pug.Options & pug.LocalsObject;
         pdfOptions?: PDFOptions;
     }
@@ -19,7 +20,15 @@ namespace TeaSchool{
             ...options.htmlTemplateOptions,
             compiledStyle: compiledStyle.css
         };
-        const renderedTemplate = pug.renderFile(options.htmlTemplatePath, htmlTemplateOptions);
+        let renderedTemplate;
+
+        if (options.htmlTemplateFn) {
+            renderedTemplate = options.htmlTemplateFn(htmlTemplateOptions);
+        } else if (options.htmlTemplatePath) {
+            renderedTemplate = pug.renderFile(options.htmlTemplatePath, htmlTemplateOptions)
+        } else {
+            throw Error('htmlTemplateFn or htmlTemplatePath must be provided')
+        }
 
         // Make puppeteer render the HTML from data buffer
         await page.goto(`data:text/html,${renderedTemplate}`,
