@@ -15,12 +15,18 @@ namespace TeaSchool{
     export const generatePdf = async (options: GeneratePdfOptions): Promise<Buffer> => {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        const compiledStyle = sass.renderSync({...options.styleOptions});
-        const htmlTemplateOptions: pug.Options & pug.LocalsObject = {
-            ...options.htmlTemplateOptions,
-            compiledStyle: compiledStyle.css
-        };
+        let htmlTemplateOptions: pug.Options & pug.LocalsObject = {...options.htmlTemplateOptions};
         let renderedTemplate;
+
+        // This is conditional since the user could get his style in some other way.
+        if (options.styleOptions) {
+            const compiledStyle = sass.renderSync({...options.styleOptions});
+
+            htmlTemplateOptions = {
+                ...options.htmlTemplateOptions,
+                compiledStyle: compiledStyle.css,
+            };
+        }
 
         if (options.htmlTemplateFn) {
             renderedTemplate = options.htmlTemplateFn(htmlTemplateOptions);
