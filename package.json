@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "test": "npx ts-mocha ./src/tests/**.ts"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,14 @@
   },
   "homepage": "https://github.com/AmirTugi/tea-school#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
     "@types/node-sass": "^3.10.32",
     "@types/pug": "^2.0.4",
     "@types/puppeteer": "^1.5.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-mocha": "^2.0.0",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   },
