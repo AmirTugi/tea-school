@@ -1,7 +1,7 @@
 import * as pug from 'pug';
 import * as sass from 'node-sass';
 import puppeteer, {NavigationOptions, PDFOptions} from 'puppeteer';
-import {Options as SassOptions} from "node-sass";
+import {Options as SassOptions} from 'node-sass';
 
 namespace TeaSchool{
     export interface GeneratePdfOptions {
