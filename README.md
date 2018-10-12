@@ -12,6 +12,7 @@ All the power you need resides in PugJs, Node-Sass and Puppeteer.
 You have the documentation for each one of them, and you simply pass the same object of configuration.
 
 #### Example in TypeScript
+For further inspection look at the `example` folder
 ```typescript
 import {GeneratePdfOptions, generatePdf} from 'tea-school';
 import * as path from 'path';
@@ -43,7 +44,7 @@ style(type="text/css") #{compiledStyle}
 
 div#banner-message
     p Hello, #{name}
-    button Hover to change color
+    button My god, this is amazing
 ```
 
 ##### template.scss
@@ -79,5 +80,5 @@ body {
 ```
 
 ### Important
-The key `compiledStyle` is reserved on the Pug options fro the compiled style to be attached to the html.  
+The key `compiledStyle` is reserved on the Pug options for the compiled style to be attached to the html.  
 Please do not use this key (or use at your own risk)
