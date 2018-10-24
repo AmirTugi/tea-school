@@ -83,6 +83,20 @@ body {
 }
 ```
 
+#### Running the examples in the package
+Use [ts-node](https://github.com/TypeStrong/ts-node) to run the `index.ts` without pre-compiling it.  
+```bash
+> npm i -g ts-node
+> ts-node examples/basic-usage/index.ts
+```
+
+Alternatively, just compile the `index.ts` using `tsc`.  
+```bash
+> npm i -g typescript
+> tsc examples/basic-usage/index.ts
+> node examples/basic-usage/index.js
+```
+
 ### Important
 The key `compiledStyle` is reserved on the Pug options for the compiled style to be attached to the html.  
 Please do not use this key (or use at your own risk)

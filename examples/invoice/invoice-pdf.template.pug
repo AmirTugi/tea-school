@@ -1,0 +1,27 @@
+// Use !{var} to use unescaped conent
+style(type="text/css") !{compiledStyle}
+
+h1.title Invoice number ##{invoice.id}
+
+p.created-at #{invoice.createdAt}
+
+h3 For: #{invoice.customer.number}
+
+table
+    thead
+        tr
+            th #
+            th Item
+            th Price
+    tbody
+        each line in invoice.lines
+            tr
+                td #{line.id}
+                td #{line.item}
+                td #{line.price}
+
+div.table-footer Shipping: $#{invoice.shipping}
+div.table-footer total: $#{invoice.total}
+
+h3.comments-title Comments
+p #{invoice.comments}
