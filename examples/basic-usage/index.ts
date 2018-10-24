@@ -31,6 +31,6 @@ import {Options as SassOptions} from "node-sass";
         pdfOptions
     };
 
-    //
+    // We just wait for the pdf to generate, and then the program can exit
     await TeaSchool.generatePdf(teaSchoolOptions);
 })();
