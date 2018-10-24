@@ -2,6 +2,9 @@
 Simplified `HTML + CSS --> PDF` Generetor for Nodejs  
 Basically just a method combining [PugJS](https://github.com/pugjs/pug), [Node-Sass](https://github.com/sass/node-sass), and [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 
+## Read More
+Read more about the package in my [medium post](https://itnext.io/tea-school-js-generate-a-pdf-file-from-html-and-css-in-node-js-32529f9b0f37)
+
 ## Install
 ```
 npm install tea-school
@@ -40,7 +43,8 @@ const options: GeneratePdfOptions = {
 
 ##### template.pug
 ```pug
-style(type="text/css") #{compiledStyle}
+
+style(type="text/css") !{compiledStyle}
 
 div#banner-message
     p Hello, #{name}
