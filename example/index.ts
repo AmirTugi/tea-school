@@ -19,7 +19,7 @@ import {Options as SassOptions} from "node-sass";
 
     const pdfOptions: PDFOptions = {
         // Output path will be relative.
-        path: path.resolve(__dirname, 'output', 'hn.pdf'),
+        path: path.resolve(__dirname, 'output', 'tea-school-example.pdf'),
         format: 'A4',
         printBackground: true
     };
@@ -31,6 +31,6 @@ import {Options as SassOptions} from "node-sass";
         pdfOptions
     };
 
-    //
+    // We just wait for the pdf to generate, and then the program can exit
     await TeaSchool.generatePdf(teaSchoolOptions);
 })();
