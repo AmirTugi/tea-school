@@ -6,8 +6,13 @@ Basically just a method combining [PugJS](https://github.com/pugjs/pug), [Node-S
 Read more about the package in my [medium post](https://itnext.io/tea-school-js-generate-a-pdf-file-from-html-and-css-in-node-js-32529f9b0f37)
 
 ## Install
+Using `npm`
+```bash
+> npm install tea-school
 ```
-npm install tea-school
+Using `yarn`
+```bash
+> yarn add tea-school
 ```
 
 ## Usage
@@ -15,7 +20,7 @@ All the power you need resides in PugJs, Node-Sass and Puppeteer.
 You have the documentation for each one of them, and you simply pass the same object of configuration.
 
 #### Example in TypeScript
-For further inspection look at the `example` folder
+For further inspection look at the `examples` folder
 ```typescript
 import {GeneratePdfOptions, generatePdf} from 'tea-school';
 import * as path from 'path';
@@ -43,7 +48,7 @@ const options: GeneratePdfOptions = {
 
 ##### template.pug
 ```pug
-
+// Use !{var} to use unescaped conent
 style(type="text/css") !{compiledStyle}
 
 div#banner-message
