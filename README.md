@@ -2,9 +2,17 @@
 Simplified `HTML + CSS --> PDF` Generetor for Nodejs  
 Basically just a method combining [PugJS](https://github.com/pugjs/pug), [Node-Sass](https://github.com/sass/node-sass), and [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 
+## Read More
+Read more about the package in my [medium post](https://itnext.io/tea-school-js-generate-a-pdf-file-from-html-and-css-in-node-js-32529f9b0f37)
+
 ## Install
+Using `npm`
+```bash
+> npm install tea-school
 ```
-npm install tea-school
+Using `yarn`
+```bash
+> yarn add tea-school
 ```
 
 ## Usage
@@ -12,7 +20,7 @@ All the power you need resides in PugJs, Node-Sass and Puppeteer.
 You have the documentation for each one of them, and you simply pass the same object of configuration.
 
 #### Example in TypeScript
-For further inspection look at the `example` folder
+For further inspection look at the `examples` folder
 ```typescript
 import {GeneratePdfOptions, generatePdf} from 'tea-school';
 import * as path from 'path';
@@ -40,7 +48,8 @@ const options: GeneratePdfOptions = {
 
 ##### template.pug
 ```pug
-style(type="text/css") #{compiledStyle}
+// Use !{var} to use unescaped conent
+style(type="text/css") !{compiledStyle}
 
 div#banner-message
     p Hello, #{name}
@@ -77,6 +86,20 @@ body {
     color: #fff;
   }
 }
+```
+
+#### Running the examples in the package
+Use [ts-node](https://github.com/TypeStrong/ts-node) to run the `index.ts` without pre-compiling it.  
+```bash
+> npm i -g ts-node
+> ts-node examples/basic-usage/index.ts
+```
+
+Alternatively, just compile the `index.ts` using `tsc`.  
+```bash
+> npm i -g typescript
+> tsc examples/basic-usage/index.ts
+> node examples/basic-usage/index.js
 ```
 
 ### Important

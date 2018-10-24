@@ -1,0 +1,31 @@
+body {
+  padding: 20px;
+  font-family: Halvetica, sans-serif;
+
+  .title {
+    margin-bottom: 4px;
+  }
+
+  .created-at {
+    font-size: 14px;
+    color: lightgray;
+  }
+
+  .comments-title {
+    margin-bottom: 4px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  .table-footer {
+    text-align: right;
+    margin: 4px 0;
+  }
+}

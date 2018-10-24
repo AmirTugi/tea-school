@@ -1,4 +1,4 @@
-import TeaSchool from '../src/index';
+import TeaSchool from '../../src/index';
 import * as pug from 'pug';
 import * as path from 'path';
 import {PDFOptions} from 'puppeteer';
@@ -7,11 +7,11 @@ import {Options as SassOptions} from "node-sass";
 (async () => {
     const styleOptions: SassOptions = {
         // Get relative path from cwd to the desired file
-        file: path.resolve(__dirname, 'test.scss')
+        file: path.resolve(__dirname, 'basic-usage.scss')
     };
 
     // Get relative path from cwd to the desired file
-    const htmlTemplatePath = path.resolve(__dirname, 'test.pug');
+    const htmlTemplatePath = path.resolve(__dirname, 'basic-usage.pug');
 
     const htmlTemplateOptions: pug.LocalsObject = {
         name: 'Timothy',
@@ -19,7 +19,7 @@ import {Options as SassOptions} from "node-sass";
 
     const pdfOptions: PDFOptions = {
         // Output path will be relative.
-        path: path.resolve(__dirname, 'output', 'tea-school-example.pdf'),
+        path: path.resolve(__dirname, 'output', 'basic-usage.pdf'),
         format: 'A4',
         printBackground: true
     };
