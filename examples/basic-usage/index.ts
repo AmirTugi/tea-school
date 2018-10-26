@@ -1,4 +1,4 @@
-import TeaSchool from '../../src/index';
+import TeaSchool from '../../dist/index';
 import * as pug from 'pug';
 import * as path from 'path';
 import {PDFOptions} from 'puppeteer';

@@ -98,8 +98,8 @@ Use [ts-node](https://github.com/TypeStrong/ts-node) to run the `index.ts` witho
 Alternatively, just compile the `index.ts` using `tsc`.  
 ```bash
 > npm i -g typescript
-> tsc examples/basic-usage/index.ts
-> node examples/basic-usage/index.js
+> cd examples && tsc
+> node ./basic-usage/index.js
 ```
 
 ### Important
