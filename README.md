@@ -102,6 +102,18 @@ Alternatively, just compile the `index.ts` using `tsc`.
 > node ./basic-usage/index.js
 ```
 
+## Running in Docker
+If use tea-school in Docker you can pass to Puppeteer arguments.
+
+```ecmascript 6
+  const puppeteerOptions = {
+    args: [
+      // Required for Docker version of Puppeteer
+      '--no-sandbox',
+    ],
+  };
+  const pdfFile = await TeaSchool.generatePdf(teaSchoolOptions, puppeteerOptions);
+```
 ### Important
 The key `compiledStyle` is reserved on the Pug options for the compiled style to be attached to the html.  
 Please do not use this key (or use at your own risk)
