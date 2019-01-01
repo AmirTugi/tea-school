@@ -1,6 +1,6 @@
 import * as pug from 'pug';
 import * as sass from 'node-sass';
-import puppeteer, {NavigationOptions, PDFOptions} from 'puppeteer';
+import puppeteer, {LaunchOptions, NavigationOptions, PDFOptions} from 'puppeteer';
 import {Options as SassOptions} from 'node-sass';
 
 namespace TeaSchool{
@@ -12,8 +12,8 @@ namespace TeaSchool{
         pdfOptions?: PDFOptions;
     }
 
-    export const generatePdf = async (options: GeneratePdfOptions): Promise<Buffer> => {
-        const browser = await puppeteer.launch();
+    export const generatePdf = async (options: GeneratePdfOptions, puppeteerOptions?:LaunchOptions): Promise<Buffer> => {
+        const browser = await puppeteer.launch(puppeteerOptions);
         const page = await browser.newPage();
         let htmlTemplateOptions: pug.Options & pug.LocalsObject = {...options.htmlTemplateOptions};
         let renderedTemplate;
