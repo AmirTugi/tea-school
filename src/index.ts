@@ -10,10 +10,11 @@ namespace TeaSchool{
         htmlTemplatePath?: string;
         htmlTemplateOptions?: pug.Options & pug.LocalsObject;
         pdfOptions?: PDFOptions;
+        puppeteerOptions?: LaunchOptions;
     }
 
-    export const generatePdf = async (options: GeneratePdfOptions, puppeteerOptions?:LaunchOptions): Promise<Buffer> => {
-        const browser = await puppeteer.launch(puppeteerOptions);
+    export const generatePdf = async (options: GeneratePdfOptions): Promise<Buffer> => {
+        const browser = await puppeteer.launch(options.puppeteerOptions);
         const page = await browser.newPage();
         let htmlTemplateOptions: pug.Options & pug.LocalsObject = {...options.htmlTemplateOptions};
         let renderedTemplate;
