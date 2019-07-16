@@ -1,5 +1,5 @@
 # Tea-School
-Simplified `HTML + CSS --> PDF` Generetor for Nodejs  
+Simplified `HTML + CSS --> PDF` Generator for Nodejs  
 Basically just a method combining [PugJS](https://github.com/pugjs/pug), [Node-Sass](https://github.com/sass/node-sass), and [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 
 ## Read More
