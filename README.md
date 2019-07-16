@@ -24,7 +24,7 @@ It just combines 3 libraries for:
 
 ## Usage
 We will generate the following PDF:  
-![image](https://user-images.githubusercontent.com/8065975/61318127-0a28d480-a80d-11e9-84e6-11f95399d596.png)
+<img src="https://user-images.githubusercontent.com/8065975/61318127-0a28d480-a80d-11e9-84e6-11f95399d596.png" height="200px" />
 
 For further inspection look at the `examples` folder  
 
