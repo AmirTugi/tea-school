@@ -23,7 +23,7 @@ It just combines 3 libraries for:
 * Generating a PDF from HTML ([Puppeteer](https://github.com/GoogleChrome/puppeteer))
 
 ## Usage
-We will generate the following PDF:
+We will generate the following PDF:  
 ![image](https://user-images.githubusercontent.com/8065975/61318127-0a28d480-a80d-11e9-84e6-11f95399d596.png)
 
 For further inspection look at the `examples` folder  
@@ -49,7 +49,7 @@ const options: GeneratePdfOptions = {
 
     // Here you put an object according to https://github.com/GoogleChrome/puppeteer/blob/v1.18.1/docs/api.md#pagepdfoptions
     pdfOptions: {
-        // ignore `path` to get the PDF as buffer only
+        // Ignore `path` to get the PDF as buffer only
         path: 'pdf-file.pdf',
         format: 'A4',
         printBackground: true
