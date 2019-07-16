@@ -1,5 +1,5 @@
 # Tea-School
-Simplified `HTML + CSS --> PDF` Generetor for Nodejs  
+Simplified `HTML + CSS --> PDF` Generator for Nodejs  
 Basically just a method combining [PugJS](https://github.com/pugjs/pug), [Node-Sass](https://github.com/sass/node-sass), and [Puppeteer](https://github.com/GoogleChrome/puppeteer).
 
 ## Read More
@@ -15,26 +15,41 @@ Using `yarn`
 > yarn add tea-school
 ```
 
-## Usage
-All the power you need resides in PugJs, Node-Sass and Puppeteer.  
-You have the documentation for each one of them, and you simply pass the same object of configuration.
+## What Do We Have Here?
+The library doesn't really do anything special.  
+It just combines 3 libraries for:
+* Generating HTML in run-time ([PugJS](https://github.com/pugjs/pug))
+* Generating CSS (Using [Sass](https://sass-lang.com/)) in run-time ([Node-Sass](https://github.com/sass/node-sass))
+* Generating a PDF from HTML ([Puppeteer](https://github.com/GoogleChrome/puppeteer))
 
-#### Example in TypeScript
-For further inspection look at the `examples` folder
+## Usage
+We will generate the following PDF:  
+<img src="https://user-images.githubusercontent.com/8065975/61318127-0a28d480-a80d-11e9-84e6-11f95399d596.png" height="200px" />
+
+For further inspection look at the `examples` folder  
+
+*The example will be in TypeScript, but can work in JavaScript in a matter of removing just a few words.
 ```typescript
 import {GeneratePdfOptions, generatePdf} from 'tea-school';
 import * as path from 'path';
 
 const options: GeneratePdfOptions = {
     htmlTemplatePath: path.resolve(__dirname, 'pdf-template.pug'),
+
+    // Here you put an object according to https://github.com/sass/node-sass#options 
     styleOptions: {
         file: path.resolve(__dirname, 'pdf-template.scss')
     },
+
+    // Here you put an object according to https://pugjs.org/api/reference.html#options
+    // You can add any additional key to be used as a variable in the template.
     htmlTemplateOptions: {
         contextRelatedVar: 'Timothy'
     },
+
+    // Here you put an object according to https://github.com/GoogleChrome/puppeteer/blob/v1.18.1/docs/api.md#pagepdfoptions
     pdfOptions: {
-        // Omit to get output as buffer solely
+        // Ignore `path` to get the PDF as buffer only
         path: 'pdf-file.pdf',
         format: 'A4',
         printBackground: true
@@ -88,19 +103,16 @@ body {
 }
 ```
 
-#### Running the examples in the package
-Use [ts-node](https://github.com/TypeStrong/ts-node) to run the `index.ts` without pre-compiling it.  
+#### Running the examples in the package  
 ```bash
-> npm i -g ts-node
-> ts-node examples/basic-usage/index.ts
+> npm run example
+
+// OR
+
+> npm run example:invoice
 ```
 
-Alternatively, just compile the `index.ts` using `tsc`.  
-```bash
-> npm i -g typescript
-> cd examples && tsc
-> node ./basic-usage/index.js
-```
+The examples run using [ts-node](https://github.com/TypeStrong/ts-node) to run without compiling the tests to JavaScript first.
 
 ### Important
 The key `compiledStyle` is reserved on the Pug options for the compiled style to be attached to the html.  
