@@ -1,4 +1,4 @@
-import TeaSchool from '../../dist/index';
+import TeaSchool from '../../src/index';
 import * as pug from 'pug';
 import * as path from 'path';
 import {PDFOptions} from 'puppeteer';
@@ -65,7 +65,7 @@ import {Options as SassOptions} from 'node-sass';
     };
 
     /**************************************************************
-     *      GENERATED PDF AS A FILE AND ALSO SAVED TO A FILE      *
+     *      GENERATED PDF AS A BUFFER AND ALSO SAVED TO A FILE    *
      **************************************************************/
     const pdfFile = await TeaSchool.generatePdf(teaSchoolOptions);
 })();

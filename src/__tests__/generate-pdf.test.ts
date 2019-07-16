@@ -5,7 +5,6 @@ import {PDFOptions} from 'puppeteer';
 
 describe('generatePdf function test', () => {
     it('should create a pdf in memory', async () => {
-
         const styleOptions: SassOptions = {
             data: `
                 body {
