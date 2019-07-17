@@ -44,7 +44,7 @@ const options: GeneratePdfOptions = {
     // Here you put an object according to https://pugjs.org/api/reference.html#options
     // You can add any additional key to be used as a variable in the template.
     htmlTemplateOptions: {
-        contextRelatedVar: 'Timothy'
+        name: 'Timothy'
     },
 
     // Here you put an object according to https://github.com/GoogleChrome/puppeteer/blob/v1.18.1/docs/api.md#pagepdfoptions
