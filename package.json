@@ -39,7 +39,7 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "node-sass": "^4.9.2",
+    "node-sass": "^7.0.0",
     "pug": "^2.0.3",
     "puppeteer": "^1.18.1"
   }
